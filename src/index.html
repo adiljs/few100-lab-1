@@ -4,15 +4,67 @@
 <head>
     <meta charset="UTF-8">
     <title>Front End Web 100</title>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+          crossorigin="anonymous">
 </head>
 
 <body>
-    <header>
-        <h1>Front End Web 100 Starter</h1>
-        <h2>Progressive ITU</h2>
+    <header class='container-fluid jumbotron'>
+        <h1>Tip Calculator</h1>
     </header>
-    <main>
-        
+    <main class="container">
+        <div class="btn-toolbar mb-3 dollar-amount"
+             role="toolbar"
+             aria-label="Toolbar with amount inputs(with dot and two decimal placeholders">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text"
+                         id="btnGroupAddon">$</div>
+                </div>
+                <input type="number"
+                       pattern="[0-9]+([\.,][0-9]+)?"
+                       class="form-control"
+                       placeholder="0.00"
+                       id="dollarAmount"
+                       aria-label="Input dollar Amount"
+                       aria-describedby="btnGroupAddon">
+            </div>
+        </div>
+        <div class="btn-toolbar justify-content-between"
+             role="toolbar"
+             aria-label="Toolbar with tip percentage">
+            <div class="btn-group"
+                 role="group"
+                 aria-label="First group">
+                <button type="button"
+                        id="tenPercentTip"
+                        class="btn btn-secondary">10%</button>
+                <button type="button"
+                        id="fifteenPercentTip"
+                        class="btn btn-secondary">15%</button>
+                <button type="button"
+                        id="twentyPercentTip"
+                        class="btn btn-secondary">20%</button>
+            </div>
+        </div>
+        <label>You are tipping <span id="tipPercentAmount">10%</span></label>
+
+        <div>
+            <ul class="list-group">
+                <li class="list-group-item">Bill Amount:
+                    <span id="billAmount"></span></li>
+                <li class="list-group-item">Tip Percentage:
+                    <span id="tipPercentage"></span></li>
+                <li class="list-group-item">Amount of tip:
+                    <span id="amountOfTip"></span></li>
+                <li class="list-group-item"
+                    id="textTotalToBepaid">Total to be Paid:
+                    <span id="totalToBePaid"></span></li>
+            </ul>
+        </div>
+
     </main>
 </body>
 
